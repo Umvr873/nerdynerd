@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Little Universe For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="aurora aurora-one"></div>
+  <div class="aurora aurora-two"></div>
+  <div class="floating-layer" id="floatingLayer"></div>
+
+  <main class="app-shell">
+    <section class="hero card" id="home">
+      <p class="eyebrow">Built with code, care, and a little magic ✨</p>
+      <h1>A Little Universe For <span id="herNameTitle">You</span></h1>
+      <p class="typewriter" id="typewriter"></p>
+      <div class="hero-actions">
+        <button class="primary-btn" id="startBtn">Start the surprise</button>
+        <button class="ghost-btn" id="musicBtn" aria-pressed="false">Soft music: off</button>
+      </div>
+      <p class="tiny-note">Tip: click the stars, open the poems, and unlock the final note.</p>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard" aria-live="polite">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Mission control</p>
+          <h2 id="dashboardTitle">A tiny love quest</h2>
+        </div>
+        <div class="meter-wrap">
+          <span>Smile meter</span>
+          <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+          <strong id="meterText">0%</strong>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="feature-card poem-card">
+          <div class="icon">💌</div>
+          <h3>Poem Generator</h3>
+          <p>Each click reveals a new tiny poem. Press narrate and let the browser read it softly.</p>
+          <div class="poem-box" id="poemBox">Click “New poem” to open the first one.</div>
+          <div class="button-row">
+            <button class="primary-btn small" id="newPoemBtn">New poem</button>
+            <button class="ghost-btn small" id="narrateBtn">Narrate</button>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="icon">🌙</div>
+          <h3>Reasons You Shine</h3>
+          <p>A random reason appears every time, like a little notification from the heart.</p>
+          <div class="reason-box" id="reasonBox">Ready when you are.</div>
+          <button class="primary-btn small" id="reasonBtn">Show a reason</button>
+        </article>
+
+        <article class="feature-card wide">
+          <div class="icon">⭐</div>
+          <h3>Catch the Stars</h3>
+          <p>Click the floating stars below. Every star adds sparkle to the smile meter.</p>
+          <div class="star-game" id="starGame" aria-label="Star catching mini game"></div>
+          <button class="ghost-btn small" id="resetGameBtn">Reset stars</button>
+        </article>
+
+        <article class="feature-card wide timeline-card">
+          <div class="icon">🧡</div>
+          <h3>Little Memory Lane</h3>
+          <p>Replace these cards with your favorite moments, inside jokes, or things you admire about her.</p>
+          <div class="timeline" id="timeline"></div>
+        </article>
+      </div>
+
+      <section class="final-card card locked" id="finalCard">
+        <p class="eyebrow">Final note</p>
+        <h2 id="finalTitle">Locked for now 🔐</h2>
+        <p id="finalMessage">Reach 100% on the smile meter to unlock the final message.</p>
+        <button class="primary-btn hidden" id="replayBtn">Replay the magic</button>
+      </section>
+    </section>
+  </main>
+
+  <audio id="softMusic" loop>
+    <!-- No external audio file needed. Add your own mp3 here later if you want. -->
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
