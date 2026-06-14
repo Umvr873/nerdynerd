@@ -31,6 +31,7 @@ const CONFIG = {
   ],
   memories: [
     { title: "First thought", body: "I wanted this to feel like opening a tiny gift made with care." },
+    { title: "Dearly beloved", body: "You are always there for me, my cheerer, and the cute Tamadi nose i just wanna grab and kiss it. I LOVE YOU DARL❤️." },
     { title: "Favorite thing", body: "Your presence has a calm, bright way of making moments better." },
     { title: "Nerd note", body: "This app runs on HTML, CSS, JavaScript, and a very serious smile algorithm." }
   ],
