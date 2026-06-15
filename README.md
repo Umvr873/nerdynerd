@@ -1,17 +1,37 @@
-# A Little Universe For You
+# Nerdy Nerd's Little Universe
 
-A beautiful, romantic, wholesome mini web app you can send as a link.
-It includes:
+A sweet, wholesome, poetic mini web app made as a romantic surprise.
+It is built with simple HTML, CSS, and JavaScript, so there is no installation and no backend.
 
-- A typewriter intro
-- Poem generator
-- Browser narration using speech synthesis
-- Random “reasons you shine” messages
+## What is inside
+
+- Typewriter intro from "Nerdy Nerd"
+- Poem generator with soft narration
+- Random "Reasons You Shine" messages
+- Open When letters
+- Choose Your Mood messages
+- Nerdy Nerd quiz
+- Love coupons
+- Secret room password section
 - Star-catching mini game
 - Smile meter
-- Unlockable final message
+- Unlockable final note
 - Memory lane cards
-- Floating hearts and soft animations
+- Floating hearts, stars, aurora background, and soft animations
+
+## Secret room password
+
+The secret room unlocks when she types:
+
+```text
+nerdy nerd
+```
+
+You can change this in `script.js` inside:
+
+```js
+secretWords: ["nerdy nerd", "nerdynerd", "my nerdy nerd"]
+```
 
 ## How to personalize it
 
@@ -19,32 +39,30 @@ Open `script.js` and edit the `CONFIG` section at the top:
 
 ```js
 const CONFIG = {
-  herName: "Her",
-  yourName: "Me",
+  herName: "HAYATYY❤️",
+  yourName: "Nerdy Nerd",
   finalMessage: "Your own final message here"
 };
 ```
 
-You can replace the poems, reasons, and memory cards with your own words.
+You can also edit the poems, reasons, letters, mood messages, quiz questions, coupons, and memory cards.
 
-## How to test locally
+## How to open it
 
 Double-click `index.html` and it will open in your browser.
 
-No installation. No npm. No backend.
+## How to send it to her
 
-## Easy deployment options
+You can send the whole folder as a zip file, or host it online.
 
-### Option 1: Netlify Drop
+Easy hosting options:
 
-Drag the `romantic-nerd-love-app` folder into Netlify Drop and it will create a live link.
-
-### Option 2: GitHub Pages
-
-Create a GitHub repository, upload these files, and enable GitHub Pages from the repository settings.
+1. Netlify Drop: drag the folder into Netlify Drop to get a live link.
+2. GitHub Pages: upload the files to GitHub and turn on GitHub Pages.
 
 ## Files
 
 - `index.html` — page structure
 - `styles.css` — design and animation
-- `script.js` — poems, messages, mini game, narration, and personalization
+- `script.js` — all messages, games, quiz, coupons, and interactions
+- `README.md` — instructions
