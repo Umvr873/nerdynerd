@@ -3,144 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nerdy Nerd's Little Universe</title>
+  <title>You Are My Hayaty ✦</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="noise"></div>
-  <div class="aurora aurora-one"></div>
-  <div class="aurora aurora-two"></div>
-  <div class="aurora aurora-three"></div>
+  <canvas id="constellationCanvas"></canvas>
   <div class="floating-layer" id="floatingLayer"></div>
 
   <main class="app-shell">
-    <section class="hero card" id="home">
-      <p class="eyebrow">Built by your Nerdy Nerd ✨</p>
-      <h1>A Little Universe For <span id="herNameTitle">You</span></h1>
-      <p class="typewriter" id="typewriter"></p>
-      <div class="hero-actions">
-        <button class="primary-btn" id="startBtn">Start the surprise</button>
-        <button class="ghost-btn" id="musicBtn" aria-pressed="false">Soft chime: off</button>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <p class="eyebrow">From your Nerdy Nerd ✦</p>
+        <h1>You Are My<br><em id="herNameDisplay">Hayaty</em></h1>
+        <p class="subtitle" id="typewriter"></p>
+        <div class="hero-actions">
+          <button class="primary-btn" id="startBtn">Open your gift</button>
+          <button class="ghost-btn" id="musicBtn">♪ Chime: off</button>
+        </div>
+        <p class="hint-text">Collect all the stars, answer the quiz, open the letters & unlock the final note 🔐</p>
       </div>
-      <p class="tiny-note">Tip: collect the stars, open the letters, answer the quiz, and unlock the final note.</p>
     </section>
 
-    <section class="dashboard hidden" id="dashboard" aria-live="polite">
-      <header class="topbar card">
-        <div>
-          <p class="eyebrow">Mission control</p>
-          <h2 id="dashboardTitle">A tiny love quest</h2>
-          <p class="topbar-note">A soft little place made with code, care, and every sweet thought I could fit into pixels.</p>
+    <!-- DASHBOARD -->
+    <section class="dashboard hidden" id="dashboard">
+
+      <!-- topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <p class="eyebrow">Mission Control</p>
+          <h2 id="dashTitle">HAYATYY's Little Cosmos</h2>
+          <p class="topbar-sub">A new universe — built from scratch — because you deserve something no one else has ever seen.</p>
         </div>
-        <div class="meter-wrap">
-          <span>Smile meter</span>
-          <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
-          <strong id="meterText">0%</strong>
+        <div class="smile-meter-wrap">
+          <span class="meter-label">Love Meter</span>
+          <div class="smile-meter"><div class="smile-fill" id="smileFill"></div></div>
+          <strong id="smileText">0 / 100</strong>
         </div>
       </header>
 
       <div class="grid">
-        <article class="feature-card poem-card">
-          <div class="icon">💌</div>
-          <h3>Poem Generator</h3>
-          <p>Each click reveals a tiny poem from your Nerdy Nerd. Press narrate and let the browser read it softly.</p>
-          <div class="poem-box" id="poemBox">Click “New poem” to open the first one.</div>
-          <div class="button-row">
-            <button class="primary-btn small" id="newPoemBtn">New poem</button>
-            <button class="ghost-btn small" id="narrateBtn">Narrate</button>
+
+        <!-- POEM GARDEN -->
+        <article class="card poem-card">
+          <div class="card-glow"></div>
+          <span class="card-icon">🪷</span>
+          <h3>The Poem Garden</h3>
+          <p class="card-desc">Each bloom is a new poem grown just for you. Press narrate to hear it in a soft voice.</p>
+          <div class="display-box" id="poemBox">Press "Bloom" to open the first flower.</div>
+          <div class="btn-row">
+            <button class="primary-btn sm" id="bloomBtn">Bloom ✦</button>
+            <button class="ghost-btn sm" id="narrateBtn">Narrate</button>
           </div>
         </article>
 
-        <article class="feature-card">
-          <div class="icon">🌙</div>
-          <h3>Reasons You Shine</h3>
-          <p>A random reason appears every time, like a little notification from the heart.</p>
-          <div class="reason-box" id="reasonBox">Ready when you are.</div>
-          <button class="primary-btn small" id="reasonBtn">Show a reason</button>
+        <!-- CONSTELLATION WISH -->
+        <article class="card wish-card">
+          <div class="card-glow"></div>
+          <span class="card-icon">🌠</span>
+          <h3>Make a Wish</h3>
+          <p class="card-desc">Type your wish into the cosmos. The stars will carry it back as a sweet message.</p>
+          <textarea class="wish-input" id="wishInput" placeholder="Write your wish here..."></textarea>
+          <button class="primary-btn sm" id="sendWishBtn">Send to the stars ✦</button>
+          <div class="display-box sm-box hidden" id="wishResponse"></div>
         </article>
 
-        <article class="feature-card wide letter-card">
-          <div class="icon">📬</div>
-          <h3>Open When Letters</h3>
-          <p>Pick a letter for the exact kind of moment you are in. I left a soft note inside each one.</p>
-          <div class="letter-buttons" id="letterButtons"></div>
-          <div class="letter-box" id="letterBox">Choose one little envelope above.</div>
+        <!-- OPEN WHEN LETTERS (wide) -->
+        <article class="card wide letter-card">
+          <div class="card-glow"></div>
+          <span class="card-icon">💌</span>
+          <h3>Letters from My Heart</h3>
+          <p class="card-desc">Choose the letter that matches this moment. Each one was written thinking of you.</p>
+          <div class="chip-row" id="letterChips"></div>
+          <div class="display-box letter-display hidden" id="letterBox"></div>
         </article>
 
-        <article class="feature-card mood-card">
-          <div class="icon">🫶</div>
-          <h3>Choose Your Mood</h3>
-          <p>Tell this tiny universe what you need, and it will send you a sweet message.</p>
-          <div class="mood-buttons" id="moodButtons"></div>
-          <div class="mood-box" id="moodBox">Waiting for your mood, Hayatyy.</div>
+        <!-- MOOD ORACLE -->
+        <article class="card mood-card">
+          <div class="card-glow"></div>
+          <span class="card-icon">🫧</span>
+          <h3>Mood Oracle</h3>
+          <p class="card-desc">Tell the oracle how you feel. It will send back a message that lands softly.</p>
+          <div class="chip-row" id="moodChips"></div>
+          <div class="display-box sm-box" id="moodBox">The oracle is listening, Hayatyy.</div>
         </article>
 
-        <article class="feature-card quiz-card">
-          <div class="icon">🧠</div>
-          <h3>Nerdy Nerd Quiz</h3>
-          <p>A tiny quiz about us, smiles, and very serious heart mathematics.</p>
-          <div class="quiz-box">
-            <p class="quiz-count" id="quizCount">Question 1</p>
-            <h4 id="quizQuestion">Loading question...</h4>
-            <div class="quiz-options" id="quizOptions"></div>
-            <p class="quiz-feedback" id="quizFeedback">Choose an answer to begin.</p>
-            <button class="ghost-btn small" id="nextQuizBtn">Next question</button>
+        <!-- QUIZ (wide) -->
+        <article class="card wide quiz-card">
+          <div class="card-glow"></div>
+          <span class="card-icon">🧩</span>
+          <h3>The Love Riddle Quiz</h3>
+          <p class="card-desc">More thoughtful questions this time. Some are tricky. Some will make you smile.</p>
+          <div class="quiz-inner">
+            <p class="quiz-label" id="quizLabel">Riddle 1</p>
+            <h4 id="quizQ">Loading...</h4>
+            <div class="quiz-opts" id="quizOpts"></div>
+            <p class="quiz-fb" id="quizFb">Pick an answer to begin.</p>
+            <button class="ghost-btn sm" id="nextQuizBtn">Next riddle →</button>
           </div>
         </article>
 
-        <article class="feature-card coupon-card">
-          <div class="icon">🎟️</div>
-          <h3>Love Coupons</h3>
-          <p>Little coupons you can keep in your pocket for smiles, reassurance, and sweet reminders.</p>
-          <div class="coupon-display" id="couponDisplay">Click below to reveal a coupon.</div>
-          <div class="button-row">
-            <button class="primary-btn small" id="couponBtn">Reveal coupon</button>
-            <button class="ghost-btn small" id="redeemCouponBtn">Mark as saved</button>
+        <!-- REASONS YOU ARE MY FAVORITE -->
+        <article class="card reason-card">
+          <div class="card-glow"></div>
+          <span class="card-icon">🌾</span>
+          <h3>Why You Are My Favorite</h3>
+          <p class="card-desc">A quiet truth, delivered one at a time, like a gentle reminder from the heart.</p>
+          <div class="display-box" id="reasonBox">Ready when you press below.</div>
+          <button class="primary-btn sm" id="reasonBtn">Tell me ✦</button>
+        </article>
+
+        <!-- CONSTELLATION GAME (wide) -->
+        <article class="card wide star-card">
+          <div class="card-glow"></div>
+          <span class="card-icon">⭐</span>
+          <h3>Connect Our Constellation</h3>
+          <p class="card-desc">Click the glowing stars in order to draw our constellation. Each star adds warmth to the love meter.</p>
+          <canvas id="gameCanvas" class="game-canvas"></canvas>
+          <div class="btn-row">
+            <button class="ghost-btn sm" id="resetStarsBtn">Reset constellation</button>
+            <span class="stars-caught" id="starsCaughtText">0 / 12 stars connected</span>
           </div>
         </article>
 
-        <article class="feature-card wide secret-card">
-          <div class="icon">🔐</div>
-          <h3>Secret Room</h3>
-          <p>There is one hidden message here. Hint: type the name you call me.</p>
+        <!-- LOVE COUPONS -->
+        <article class="card coupon-card">
+          <div class="card-glow"></div>
+          <span class="card-icon">🎟</span>
+          <h3>Heart Coupons</h3>
+          <p class="card-desc">Special coupons only you can redeem. Save them somewhere close.</p>
+          <div class="coupon-display" id="couponDisplay">Press reveal to unwrap a coupon.</div>
+          <div class="btn-row">
+            <button class="primary-btn sm" id="couponBtn">Reveal ✦</button>
+            <button class="ghost-btn sm" id="saveCouponBtn">Save it</button>
+          </div>
+        </article>
+
+        <!-- SECRET GARDEN -->
+        <article class="card wide secret-card">
+          <div class="card-glow"></div>
+          <span class="card-icon">🔑</span>
+          <h3>The Secret Garden</h3>
+          <p class="card-desc">There is a hidden message growing here. The key is the sweet name you gave me.</p>
           <div class="secret-row">
-            <input id="secretInput" type="text" placeholder="Enter the secret words..." autocomplete="off" />
-            <button class="primary-btn small" id="unlockSecretBtn">Unlock</button>
+            <input id="secretInput" type="text" placeholder="Enter the secret key..." autocomplete="off" />
+            <button class="primary-btn sm" id="unlockBtn">Unlock</button>
           </div>
-          <div class="secret-message" id="secretMessage">The secret room is waiting.</div>
+          <div class="display-box hidden" id="secretMsg">The garden is waiting.</div>
         </article>
 
-        <article class="feature-card wide">
-          <div class="icon">⭐</div>
-          <h3>Catch the Stars</h3>
-          <p>Click the floating stars below. Every star adds sparkle to the smile meter.</p>
-          <div class="star-game" id="starGame" aria-label="Star catching mini game"></div>
-          <button class="ghost-btn small" id="resetGameBtn">Reset stars</button>
+        <!-- MEMORY LANTERN WALL (wide) -->
+        <article class="card wide lantern-card">
+          <div class="card-glow"></div>
+          <span class="card-icon">🏮</span>
+          <h3>The Lantern Wall</h3>
+          <p class="card-desc">Small lanterns, each holding a little truth about you that I carry quietly.</p>
+          <div class="lantern-grid" id="lanternGrid"></div>
         </article>
 
-        <article class="feature-card wide timeline-card">
-          <div class="icon">🧡</div>
-          <h3>Little Memory Lane</h3>
-          <p>Small notes about what I adore, admire, and quietly thank God for.</p>
-          <div class="timeline" id="timeline"></div>
-        </article>
       </div>
 
-      <section class="final-card card locked" id="finalCard">
-        <p class="eyebrow">Final note</p>
-        <h2 id="finalTitle">Locked for now 🔐</h2>
-        <p id="finalMessage">Reach 100% on the smile meter to unlock the final message.</p>
-        <button class="primary-btn hidden" id="replayBtn">Replay the magic</button>
+      <!-- FINAL NOTE -->
+      <section class="final-card locked" id="finalCard">
+        <p class="eyebrow">Final Note</p>
+        <h2 id="finalTitle">Sealed with love 🔐</h2>
+        <p id="finalMsg">Fill the love meter to 100 to unseal the final message.</p>
+        <button class="primary-btn hidden" id="replayBtn">Start over ✦</button>
       </section>
+
     </section>
   </main>
-
-  <audio id="softMusic" loop>
-    <!-- No external audio file needed. Add your own mp3 here later if you want. -->
-  </audio>
 
   <script src="script.js"></script>
 </body>
