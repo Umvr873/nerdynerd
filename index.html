@@ -6,7 +6,7 @@
   <title>You Are My Hayaty ✦</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -80,6 +80,23 @@
           <p class="card-desc">Choose the letter that matches this moment. Each one was written thinking of you.</p>
           <div class="chip-row" id="letterChips"></div>
           <div class="display-box letter-display hidden" id="letterBox"></div>
+        </article>
+
+        <!-- ARABIC VERSES -->
+        <article class="card wide arabic-card">
+          <div class="card-glow"></div>
+          <span class="card-icon">🌙</span>
+          <h3>Verses From the Heart <span class="ar-inline">أبيات من القلب</span></h3>
+          <p class="card-desc">A small corner written the way Arabic poets have always written love — unguarded, a little devastating. One of these already belongs to you.</p>
+          <div class="display-box arabic-display" id="arabicBox">
+            <p class="ar-text" id="arabicAr" dir="rtl" lang="ar"></p>
+            <p class="ar-en" id="arabicEn"></p>
+            <p class="ar-note" id="arabicNote"></p>
+          </div>
+          <div class="btn-row">
+            <button class="primary-btn sm" id="arabicNextBtn">Unfold a verse ✦</button>
+            <span class="stars-caught" id="arabicCounter"></span>
+          </div>
         </article>
 
         <!-- MOOD ORACLE -->

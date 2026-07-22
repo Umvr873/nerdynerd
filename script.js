@@ -36,6 +36,39 @@ const CONFIG = {
     "The world is noisier without you and I notice every time."
   ],
 
+  arabicVerses: [
+    {
+      ar: "ما نفع الهدايا وأنتِ عندي كافية؟ وكيف أنظر في المرايا وكل ما أراه أنتِ؟\nأتُرى صُنعت لتري نفسها في من خُلق ليراكِ؟\nانتشليني من قاع صمتي كلما نادى صوتٌ باسمكِ.\nصدّقيني، لو رمتني الدنيا في البحر لما بالَيت.\nلا يوقفني بر ولا بحر، ولا حتى الخراب، عن الوصول إليكِ.",
+      en: "What use are gifts to me when having you is enough? How could I admire mirrors when all I see is you? Were they made so you could see the one created to see you? Pull me from the depths of my silence whenever a voice calls your name. Believe me, even if the world cast me into the sea, I would not care. Neither earth nor water could stop me. Not even ruin could keep me from you.",
+      note: "The one you sent me. Word for word."
+    },
+    {
+      ar: "قلبي وجد في اسمكِ راحته، فكيف أطلب سكناً غير عينيكِ؟",
+      en: "My heart found its rest in your name — how could I ask for a home other than your eyes?",
+      note: "Written for you, Hayatyy."
+    },
+    {
+      ar: "أنتِ القصيدة التي لم أكتبها بعد، وحين أكتبها، لن أُنهيها أبداً.",
+      en: "You are the poem I have not written yet — and when I write it, I will never let it end.",
+      note: "Written for you, Hayatyy."
+    },
+    {
+      ar: "يا من سكنتِ القلب دون استئذان، ابقَي، فالبيت لا يُشبهه بيت.",
+      en: "You who moved into my heart without asking — stay. No house resembles this one.",
+      note: "Written for you, Hayatyy."
+    },
+    {
+      ar: "كل الطرقات تُشبه بعضها، إلا الطريق إليكِ، فهو وحده يشبه البيت.",
+      en: "Every road resembles another — except the road to you; it alone resembles home.",
+      note: "Written for you, Hayatyy."
+    },
+    {
+      ar: "لو خُيّرتُ بين النجوم وبينكِ، لتركتُ السماء فقيرة.",
+      en: "If I were made to choose between the stars and you, I would leave the sky poor.",
+      note: "Written for you, Hayatyy."
+    }
+  ],
+
   wishes: [
     "The stars received it. They say: your wish already exists in someone's heart — and that someone is thinking of you right now.",
     "Wish registered. The cosmos confirms: you deserve every good thing, and then a little more.",
@@ -183,6 +216,12 @@ const letterBox      = document.getElementById("letterBox");
 const moodChips      = document.getElementById("moodChips");
 const moodBox        = document.getElementById("moodBox");
 
+const arabicAr       = document.getElementById("arabicAr");
+const arabicEn       = document.getElementById("arabicEn");
+const arabicNote     = document.getElementById("arabicNote");
+const arabicNextBtn  = document.getElementById("arabicNextBtn");
+const arabicCounter  = document.getElementById("arabicCounter");
+
 const quizLabel      = document.getElementById("quizLabel");
 const quizQ          = document.getElementById("quizQ");
 const quizOpts       = document.getElementById("quizOpts");
@@ -219,6 +258,7 @@ const floatingLayer  = document.getElementById("floatingLayer");
 // ─── STATE ────────────────────────────────────────────────────
 let score = 0;
 let poemIdx = -1;
+let arabicIdx = -1;
 let quizIdx = 0;
 let quizAnswered = false;
 let couponIdx = -1;
@@ -370,6 +410,24 @@ narrateBtn.addEventListener("click", () => {
   u.rate = 0.85; u.pitch = 1.05;
   window.speechSynthesis.speak(u);
 });
+
+// ─── ARABIC VERSES ────────────────────────────────────────────
+function renderArabicVerse() {
+  const v = CONFIG.arabicVerses[arabicIdx];
+  arabicAr.textContent = v.ar;
+  arabicEn.textContent = v.en;
+  arabicNote.textContent = v.note;
+  arabicCounter.textContent = `${arabicIdx + 1} / ${CONFIG.arabicVerses.length}`;
+}
+
+arabicNextBtn.addEventListener("click", () => {
+  arabicIdx = (arabicIdx + 1) % CONFIG.arabicVerses.length;
+  renderArabicVerse();
+  addScore(7);
+  sparkle(12);
+});
+
+arabicCounter.textContent = `0 / ${CONFIG.arabicVerses.length}`;
 
 // ─── WISHING WELL ─────────────────────────────────────────────
 sendWishBtn.addEventListener("click", () => {
@@ -634,10 +692,15 @@ function unlockFinal() {
 replayBtn.addEventListener("click", () => {
   score = 0;
   poemIdx = -1;
+  arabicIdx = -1;
   quizIdx = 0;
   couponIdx = -1;
   secretUnlocked = false;
   poemBox.textContent = "Press Bloom \u2756 to open the first flower.";
+  arabicAr.textContent = "";
+  arabicEn.textContent = "Press \"Unfold a verse\" to begin.";
+  arabicNote.textContent = "";
+  arabicCounter.textContent = `0 / ${CONFIG.arabicVerses.length}`;
   reasonBox.textContent = "Ready when you press below.";
   letterBox.classList.add("hidden");
   wishResponse.classList.add("hidden");
@@ -662,6 +725,7 @@ replayBtn.addEventListener("click", () => {
 // ─── INIT ─────────────────────────────────────────────────────
 herNameDisplay.textContent = CONFIG.displayName;
 dashTitle.textContent = `${CONFIG.herName}'s Little Cosmos`;
+arabicEn.textContent = "Press \"Unfold a verse\" to begin.";
 buildLetters();
 buildMoods();
 renderQuiz();
