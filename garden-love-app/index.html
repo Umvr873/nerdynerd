@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Garden Grown For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="sky-glow"></div>
+  <div class="firefly-layer" id="fireflyLayer"></div>
+
+  <main class="app-shell">
+    <section class="hero card" id="home">
+      <p class="eyebrow">Planted by your Nerdy Nerd 🌿</p>
+      <h1>A Little Garden, Grown Just For <span id="herNameTitle">You</span></h1>
+      <p class="typewriter" id="typewriter"></p>
+      <div class="hero-actions">
+        <button class="primary-btn" id="startBtn">Step inside the gate</button>
+        <button class="ghost-btn" id="musicBtn" aria-pressed="false">Garden hum: off</button>
+      </div>
+      <p class="tiny-note">Tip: water the flowers, read the postcards, answer the trivia, and watch the whole garden bloom.</p>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard" aria-live="polite">
+      <header class="topbar card">
+        <div>
+          <p class="eyebrow">Garden gate</p>
+          <h2 id="dashboardTitle">Wander wherever you like</h2>
+          <p class="topbar-note">Every path here was planted on purpose — one small, soft thing at a time, for you.</p>
+        </div>
+        <div class="meter-wrap">
+          <span>Bloom meter</span>
+          <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+          <strong id="meterText">0%</strong>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="feature-card poem-card">
+          <div class="icon">🌸</div>
+          <h3>Petals of Poetry</h3>
+          <p>Pull a petal, find a poem. Press "read aloud" and let it drift to you gently.</p>
+          <div class="poem-box" id="poemBox">Pull a petal to open the first one.</div>
+          <div class="button-row">
+            <button class="primary-btn small" id="newPoemBtn">Pull a petal</button>
+            <button class="ghost-btn small" id="narrateBtn">Read aloud</button>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="icon">☀️</div>
+          <h3>Sunbeams</h3>
+          <p>A little patch of light appears, holding one small reason you're loved.</p>
+          <div class="reason-box" id="reasonBox">Ready when you are.</div>
+          <button class="primary-btn small" id="reasonBtn">Catch a sunbeam</button>
+        </article>
+
+        <article class="feature-card wide letter-card">
+          <div class="icon">🪴</div>
+          <h3>Postcards on the Line</h3>
+          <p>Pick the postcard that matches your moment. I pinned a note behind each one.</p>
+          <div class="letter-buttons" id="letterButtons"></div>
+          <div class="letter-box" id="letterBox">Choose a postcard from the line above.</div>
+        </article>
+
+        <article class="feature-card mood-card">
+          <div class="icon">🌦️</div>
+          <h3>Weather in Your Heart</h3>
+          <p>Tell the garden what today feels like, and it'll answer back.</p>
+          <div class="mood-buttons" id="moodButtons"></div>
+          <div class="mood-box" id="moodBox">Waiting to hear how you're doing, Hayatyy.</div>
+        </article>
+
+        <article class="feature-card quiz-card">
+          <div class="icon">🐝</div>
+          <h3>Garden Trivia</h3>
+          <p>A tiny quiz about us, wandered together, one flowerbed at a time.</p>
+          <div class="quiz-box">
+            <p class="quiz-count" id="quizCount">Question 1</p>
+            <h4 id="quizQuestion">Loading question...</h4>
+            <div class="quiz-options" id="quizOptions"></div>
+            <p class="quiz-feedback" id="quizFeedback">Choose an answer to begin.</p>
+            <button class="ghost-btn small" id="nextQuizBtn">Next question</button>
+          </div>
+        </article>
+
+        <article class="feature-card coupon-card">
+          <div class="icon">🌱</div>
+          <h3>Seed Packets</h3>
+          <p>Little tokens to plant whenever you need one — comfort, reassurance, or just a smile.</p>
+          <div class="coupon-display" id="couponDisplay">Tap below to open a seed packet.</div>
+          <div class="button-row">
+            <button class="primary-btn small" id="couponBtn">Open a packet</button>
+            <button class="ghost-btn small" id="redeemCouponBtn">Tuck it away</button>
+          </div>
+        </article>
+
+        <article class="feature-card wide secret-card">
+          <div class="icon">🔑</div>
+          <h3>The Greenhouse</h3>
+          <p>There's one hidden room at the back of the garden. Hint: type the name you call me.</p>
+          <div class="secret-row">
+            <input id="secretInput" type="text" placeholder="Enter the secret words..." autocomplete="off" />
+            <button class="primary-btn small" id="unlockSecretBtn">Unlock</button>
+          </div>
+          <div class="secret-message" id="secretMessage">The greenhouse door is still closed.</div>
+        </article>
+
+        <article class="feature-card wide">
+          <div class="icon">✨</div>
+          <h3>Catch the Fireflies</h3>
+          <p>Dusk is falling on the garden. Click the fireflies below — each one lights up the bloom meter.</p>
+          <div class="star-game" id="starGame" aria-label="Firefly catching mini game"></div>
+          <button class="ghost-btn small" id="resetGameBtn">Let them scatter again</button>
+        </article>
+
+        <article class="feature-card wide timeline-card">
+          <div class="icon">🌳</div>
+          <h3>Growth Rings</h3>
+          <p>Small rings in the trunk — quiet notes on what I admire, and quietly thank God for.</p>
+          <div class="timeline" id="timeline"></div>
+        </article>
+      </div>
+
+      <section class="final-card card locked" id="finalCard">
+        <p class="eyebrow">The deepest room</p>
+        <h2 id="finalTitle">Still growing 🔐</h2>
+        <p id="finalMessage">Reach full bloom (100%) to unlock the final note.</p>
+        <button class="primary-btn hidden" id="replayBtn">Wander through again</button>
+      </section>
+    </section>
+  </main>
+
+  <audio id="softMusic" loop>
+    <!-- No external audio file needed. Add your own mp3 here later if you want. -->
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
