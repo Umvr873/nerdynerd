@@ -1,738 +1,459 @@
-/* ============================================================
-   HAYATY V2 — You Are My Universe
-   Designed with love by your Nerdy Nerd ✦
-   ============================================================ */
-
+/*
+  PERSONALIZE HERE
+  Change the names, final message, poems, reasons, quiz, coupons, letters, and memories.
+  Then open index.html in your browser.
+*/
 const CONFIG = {
   herName: "HAYATYY❤️",
-  displayName: "Hayaty",
   yourName: "Nerdy Nerd",
-  secretKeys: ["nerdy nerd", "nerdynerd", "my nerdy nerd", "nerdy"],
-
-  intro: [
-    "You have already seen one little universe.",
-    "So your Nerdy Nerd went back to the stars, gathered new poems, new games, new letters, a wishing well, and a secret garden — ",
-    "and built this one. Just for you. Again. Because once was not enough."
+  secretWords: ["nerdy nerd", "nerdynerd", "my nerdy nerd"],
+  introLines: [
+    "I didn't want to send you another message that disappears into a chat thread, so I planted this instead.",
+    "Somewhere behind that gate is a whole little garden — flowers that open into poems, postcards pinned on a line, fireflies at dusk, and a locked greenhouse.",
+    "Take your time in here. There's no rush, no big speech. Just a quiet place that grew because I kept thinking about you."
   ],
-
   poems: [
-    "You are the kind of beautiful that quietly changes the way a person sees the world.",
-    "Every time I try to describe you, language runs out of room.",
-    "If gratitude had a name, I think it would sound exactly like yours.",
-    "There are people who make the air feel lighter just by arriving. You are one of them.",
-    "You do not realize, I think, how softly and completely you are remembered.",
-    "You are not just someone I think about. You are someone I think carefully about.",
-    "Some people make noise; you make warmth. The difference is everything.",
-    "If I could take one thing with me into every difficult moment, it would be the memory of your smile.",
-    "You carry something in you that most people spend their whole lives trying to find.",
-    "I have seen you be patient when things were difficult. That is not ordinary. That is beautiful.",
-    "You make even the quiet look tender.",
-    "There is a kind of love that does not shout; it waits softly, like yours. Like mine.",
-    "You are the kind of presence that stays even after the room has emptied.",
-    "I do not think I would be the same person without having known you. That is the honest truth.",
-    "You have this rare way of making people feel found.",
-    "If care were a language, you would be fluent without even trying.",
-    "You are already enough. You have always been enough.",
-    "The world is noisier without you and I notice every time."
+    "You arrived in my life the way spring arrives — quietly at first, and then everything was blooming.",
+    "I don't need a whole bouquet to think of you. One flower does it, every time.",
+    "If I planted a garden for every reason I adore you, there wouldn't be enough land left for anything else.",
+    "You are the kind of warmth that doesn't announce itself, it just settles into a room and stays.",
+    "Some people water a garden. You water something in me I didn't know was thirsty.",
+    "I keep this little patch of ground in my chest, and somehow it's always you growing there.",
+    "You make ordinary Tuesdays smell like something blooming.",
+    "If comfort had roots, I think they'd look a lot like your name.",
+    "I planted this whole thing hoping one flower would make you smile the way you make everything around you softer.",
+    "You are proof that some things don't need to be loud to be the most alive thing in the room.",
+    "The garden gets quiet at dusk, and that's usually when I miss you the most.",
+    "I'm not good with big declarations, so I built you a place instead of writing you a paragraph.",
+    "If I could bottle one season and hand it to you, I'd pick the one where I met you.",
+    "You make waiting for spring feel unnecessary — you're the warm weather all on your own.",
+    "Every small thing I grew in here, I grew thinking it might make you smile for a second longer."
   ],
-
-  arabicVerses: [
-    {
-      ar: "ما نفع الهدايا وأنتِ عندي كافية؟ وكيف أنظر في المرايا وكل ما أراه أنتِ؟\nأتُرى صُنعت لتري نفسها في من خُلق ليراكِ؟\nانتشليني من قاع صمتي كلما نادى صوتٌ باسمكِ.\nصدّقيني، لو رمتني الدنيا في البحر لما بالَيت.\nلا يوقفني بر ولا بحر، ولا حتى الخراب، عن الوصول إليكِ.",
-      en: "What use are gifts to me when having you is enough? How could I admire mirrors when all I see is you? Were they made so you could see the one created to see you? Pull me from the depths of my silence whenever a voice calls your name. Believe me, even if the world cast me into the sea, I would not care. Neither earth nor water could stop me. Not even ruin could keep me from you.",
-      note: "The one you sent me. Word for word."
-    },
-    {
-      ar: "قلبي وجد في اسمكِ راحته، فكيف أطلب سكناً غير عينيكِ؟",
-      en: "My heart found its rest in your name — how could I ask for a home other than your eyes?",
-      note: "Written for you, Hayatyy."
-    },
-    {
-      ar: "أنتِ القصيدة التي لم أكتبها بعد، وحين أكتبها، لن أُنهيها أبداً.",
-      en: "You are the poem I have not written yet — and when I write it, I will never let it end.",
-      note: "Written for you, Hayatyy."
-    },
-    {
-      ar: "يا من سكنتِ القلب دون استئذان، ابقَي، فالبيت لا يُشبهه بيت.",
-      en: "You who moved into my heart without asking — stay. No house resembles this one.",
-      note: "Written for you, Hayatyy."
-    },
-    {
-      ar: "كل الطرقات تُشبه بعضها، إلا الطريق إليكِ، فهو وحده يشبه البيت.",
-      en: "Every road resembles another — except the road to you; it alone resembles home.",
-      note: "Written for you, Hayatyy."
-    },
-    {
-      ar: "لو خُيّرتُ بين النجوم وبينكِ، لتركتُ السماء فقيرة.",
-      en: "If I were made to choose between the stars and you, I would leave the sky poor.",
-      note: "Written for you, Hayatyy."
-    }
-  ],
-
-  wishes: [
-    "The stars received it. They say: your wish already exists in someone's heart — and that someone is thinking of you right now.",
-    "Wish registered. The cosmos confirms: you deserve every good thing, and then a little more.",
-    "Delivered to the farthest star. It reflected it back as something simple: you are deeply, quietly, completely cared for.",
-    "The universe heard you. It says that whatever you wished for, you have already been given something even better — a heart that chose you.",
-    "Sent. The stars translated it into a message: you are not alone in this. You never were.",
-    "Received. The night sky wants you to know — your name is whispered up here too, by someone who means every word.",
-    "The constellations noted it down. Their reply: rest easy, Hayatyy. Good things are patient, and they are coming."
-  ],
-
   reasons: [
-    "Because you make quiet moments feel full.",
-    "Because your kindness is not performance — it is just who you are.",
-    "Because you hold people gently without even noticing.",
-    "Because your laugh changes the temperature of a room.",
-    "Because you try even when it is hard. Especially when it is hard.",
-    "Because you make ordinary conversations feel like they matter.",
-    "Because the way you care about people is rare. Genuinely rare.",
-    "Because you are thoughtful in a world that rushes.",
-    "Because you make me want to be more careful with my words.",
-    "Because even your silences are warm.",
-    "Because you are better than you think you are. Quietly, clearly, better.",
-    "Because you exist in this world, and that alone is a reason."
+    "You make people feel like they belong exactly where they are.",
+    "Your laugh is the kind that convinces a whole room to lighten up.",
+    "You notice small things about people, and that is a rarer gift than you realize.",
+    "You are gentle with people even on days you didn't get much gentleness yourself.",
+    "You make an ordinary conversation feel like it mattered.",
+    "You are not just lovely to look at — you are lovely to be around.",
+    "You have a way of making people feel less alone without even trying.",
+    "Your kindness isn't performative, it's just who you are.",
+    "You are easy to talk to and impossible to stop thinking about.",
+    "You bring a kind of calm into rooms that badly need it.",
+    "You make the people close to you feel chosen, on purpose.",
+    "You are the kind of person someone is lucky to grow anything with."
   ],
-
-  letters: [
+  openWhenLetters: [
     {
-      label: "When you miss me",
-      text: "Hayatyy. If the day feels quiet in the wrong way right now — the kind of quiet that feels like something is missing — then read this carefully. I am somewhere thinking about you. Not vaguely. Specifically. I am thinking about the way you talk and the way you listen and the way you make even distance feel temporary. You are not forgotten. You are the opposite of forgotten. And the space between us is just geography. It does not change anything that is real."
+      title: "Open when you miss me",
+      message: "Hayatyy, if the day feels quiet and far away, come stand in this little garden for a minute. I planted it thinking of you specifically, so in a strange way, you're never really far from it — or from me. Distance can make things quiet, but it hasn't made you any less thought of."
     },
     {
-      label: "When you are tired",
-      text: "You are allowed to be tired. You do not have to be strong every hour of every day. Rest is not failure — it is how a person stays whole. I hope you put something down tonight. Just for a little while. And I hope you wake up tomorrow feeling like the world has slightly more room in it. You are carrying so much so quietly. I see it. I appreciate it. I am proud of you — even when you do not feel like there is anything to be proud of."
+      title: "Open when you're exhausted",
+      message: "You don't have to keep proving how strong you are today. Some days are just for sitting still and letting things be slow. Rest, Hayatyy — you've more than earned it, and I'll still be proud of you whether today is productive or not."
     },
     {
-      label: "When you need to laugh",
-      text: "Okay. Breaking transmission from Nerdy Nerd headquarters. Priority message. The smile algorithm has detected a shortage in your current atmosphere. Immediate prescription: one deep breath, one ridiculous thought about how much effort went into writing this sentence, and one acknowledgment that somewhere in the world your Nerdy Nerd is being extremely earnest about making you feel a tiny bit better. Emergency smile deployed. Please confirm receipt. Over."
+      title: "Open when you need a smile",
+      message: "Emergency garden bulletin: your smile has officially been declared the prettiest thing this place has ever grown, and no flower here is even a little bit jealous. Please smile small small for me, wherever you are right now."
     },
     {
-      label: "When you doubt yourself",
-      text: "There are things I know about you that you seem to have forgotten. You are brighter than you are giving yourself credit for right now. You have gotten through every hard thing that has come for you so far — every single one. That is not luck. That is you. The doubt is lying to you. I have watched you do difficult things with grace, and I am not generous with that observation. You are more capable than this moment is making you feel."
+      title: "Open when you doubt yourself",
+      message: "Whatever that doubting voice is telling you today, it isn't the truth. You are capable, warm-hearted, and worth every good thing that's coming to you. One hard day doesn't undo everything wonderful you already are."
     },
     {
-      label: "When it is a good day",
-      text: "Good. Stay in this one a little longer than usual. Notice the texture of it — the light, the way things feel slightly more possible than they did yesterday. Good days are worth paying attention to. You deserve them. And on the days when you have them, I hope you let yourself be fully inside them without already worrying about what comes next. You earned this one. Enjoy it without guilt. That is an instruction."
-    },
-    {
-      label: "When you want to feel loved",
-      text: "Then let me be clear, so there is no ambiguity at all. You are loved. Not the vague, background kind — the specific kind. The kind that notices things. The kind that remembers. The kind that built a whole app and then built a second one because the first one was not enough. You are loved in the way that changes how a person moves through their days. You are loved carefully and genuinely and with a great deal of gratitude that you exist at all."
+      title: "Open when today is a good day",
+      message: "I hope this good day stretches a little longer than usual. I hope your smile feels easy and unforced. And I hope this tiny corner of the garden adds one more small, good thing to a day that's already treating you kindly."
     }
   ],
-
   moods: [
-    { label: "I need sweetness", msg: "Then here it is, plain and soft: you are wonderful. Not performed-wonderful. Real wonderful. The kind that quietly makes everything around it better." },
-    { label: "I feel far away", msg: "Distance is temporary. What is real is still real. And what is real includes someone who is thinking of you right now, carefully, from wherever they are." },
-    { label: "I need peace", msg: "Then breathe. Slowly. This little corner of the internet is yours right now. Nothing is required of you here. Just rest for a moment." },
-    { label: "Surprise me", msg: "Surprise: the way you exist in the world is quietly extraordinary. The way you are kind without announcing it. The way you try. The way you keep going. Extraordinary." },
-    { label: "I'm a little sad", msg: "I hear you. And I am sorry the day is sitting heavy. You do not have to rush past this feeling. But I also want you to know — it will not stay at this weight forever. And I am here." },
-    { label: "I feel loved", msg: "Good. Hold onto that. You are supposed to feel that way. It is accurate." }
+    { label: "I want to smile", message: "Prescription from the garden: one slow breath, one small grin, and the reminder that your Nerdy Nerd thinks about you more than is probably reasonable." },
+    { label: "I feel worn out", message: "Then rest here for a second, Hayatyy. Nothing in this garden is going anywhere. You're allowed to be tired without also needing to explain it." },
+    { label: "I miss you", message: "I miss you in the small, unglamorous ways — mid-sentence, mid-task, for no reason at all. If I could mail you an afternoon together, I would." },
+    { label: "Motivate me", message: "You've made it through every hard day that came before today, and that's not luck — that's you. Keep going gently. I'm rooting for you, quietly and constantly." },
+    { label: "Give me a poem", message: "You are a warm hour in a long week, a soft light left on for no particular reason, and someone whose name I don't get tired of thinking." }
   ],
-
   quiz: [
     {
-      q: "What is the most precise definition of 'Hayaty'?",
-      opts: ["A name I gave you randomly", "My life, in Arabic — and also in truth", "A word I once heard in a song", "A name from a book"],
-      ans: 1,
-      fb: "Correct. It means 'my life'. That is not a coincidence."
+      question: "What grows fastest in this garden?",
+      options: ["Weeds", "My affection for you", "Tomatoes", "Confusion"],
+      answer: 1,
+      response: "Correct — and it's an invasive species at this point, honestly."
     },
     {
-      q: "What is Nerdy Nerd's primary programming language of love?",
-      opts: ["Python (it is practical)", "JavaScript (it runs in any environment)", "Pure care (it compiles in every language)", "Assembly (low-level, close to the heart)"],
-      ans: 2,
-      fb: "Pure care. Runs everywhere. No errors. No deprecation schedule."
+      question: "What do I like most about you?",
+      options: ["Your smile", "Your kindness", "Your calm energy", "All of the above, obviously"],
+      answer: 3,
+      response: "Exactly right. Picking just one was never going to happen."
     },
     {
-      q: "Why was version 2 of this app built?",
-      opts: ["Because version 1 had bugs", "Because you had already seen version 1", "Because the developer was bored", "To test a new JavaScript framework"],
-      ans: 1,
-      fb: "Exactly. You had already seen version 1. So a new universe was built. That is just how this works."
+      question: "Who planted this whole garden?",
+      options: ["A professional landscaper", "Your Nerdy Nerd", "A very determined squirrel", "Nobody, it grew itself"],
+      answer: 1,
+      response: "Correct — your very own Nerdy Nerd, reporting for gardening duty."
     },
     {
-      q: "Which of the following is the most accurate description of your smile?",
-      opts: ["Nice", "Pretty good on most days", "Technically measurable in joy units", "Something that genuinely changes people"],
-      ans: 3,
-      fb: "Yes. That one. The last one. Do not argue with the algorithm."
+      question: "What happens when you smile?",
+      options: ["The flowers open a little wider", "My whole day improves", "The bloom meter gets happier", "All of these, somehow"],
+      answer: 3,
+      response: "Right again. Your smile has full watering rights around here."
     },
     {
-      q: "The secret room requires a key. What is the key made of?",
-      opts: ["A password I once told you", "The name you gave me", "A random word", "A mathematical formula"],
-      ans: 1,
-      fb: "The name you gave me. Which, for the record, is a name I carry with pride."
-    },
-    {
-      q: "Finish the sentence: You are not just someone I like —",
-      opts: ["you are someone I tolerate very well", "you are someone I appreciate a normal amount", "you are someone I think about carefully and often", "you are someone I have met"],
-      ans: 2,
-      fb: "You are someone I think about carefully and often. The most true option, always."
+      question: "What should you remember after visiting this garden?",
+      options: ["That it's just a website", "That you are genuinely cherished", "That fireflies are hard to click", "That gardens need weeding"],
+      answer: 1,
+      response: "Always. No amount of code can fully say it, but that's the whole point of this place."
     }
   ],
-
   coupons: [
-    "✦ Coupon A — Redeem for one long, honest message on a random day when you least expect it.",
-    "✦ Coupon B — Redeem for one compliment so specific it could only be about you.",
-    "✦ Coupon C — Redeem for one gentle reminder, delivered whenever you need it: you are doing better than you think.",
-    "✦ Coupon D — Redeem for one story about the exact moment you made me feel proud of you.",
-    "✦ Coupon E — Redeem for one ridiculous Nerdy Nerd joke, guaranteed to be warmly terrible.",
-    "✦ Coupon F — Redeem for one explanation of exactly why you matter, written as carefully as I can write it.",
-    "✦ Coupon G — Redeem whenever you feel unseen. Because I see you. Clearly and completely."
+    "Seed Packet 01: Redeem for one long, unhurried message from your Nerdy Nerd.",
+    "Seed Packet 02: Redeem for one random compliment, delivered on a completely ordinary day.",
+    "Seed Packet 03: Redeem for one gentle reminder that you're doing better than you think.",
+    "Seed Packet 04: Redeem for one terrible joke, deployed exactly when the day gets too serious.",
+    "Seed Packet 05: Redeem for one soft paragraph about all the reasons you're special.",
+    "Seed Packet 06: Redeem for one surprise plan, thought through with actual care.",
+    "Seed Packet 07: Redeem for one proud-of-you note, whenever you need to hear it."
   ],
-
-  lanterns: [
-    { title: "First thought", body: "I wanted this to feel like something you open and cannot quite explain — something that makes the day slightly warmer." },
-    { title: "What I notice", body: "You are kinder to other people than you are to yourself. I notice that. And I hope someday the kindness goes both ways." },
-    { title: "What I keep", body: "I keep small memories of the things you say — the careful ones, the funny ones, the ones that show me who you really are." },
-    { title: "What I believe", body: "That you are going to be fine. Not in a dismissive way. In the deep-down, bone-level, genuinely convinced way." },
-    { title: "The nerd note", body: "This app runs on JavaScript, two Google fonts, a canvas element, and a very advanced smile-detection algorithm that is definitely real." },
-    { title: "What I promise", body: "To keep finding small, specific ways to remind you that you are appreciated. Because you deserve to hear it, often and clearly." }
+  memories: [
+    { title: "First seed", body: "I wanted this to feel less like a website and more like a small gift I'd planted just for you, with actual patience behind it." },
+    { title: "Deep root", body: "You show up for me in quiet, steady ways, and you make ordinary days feel worth paying attention to." },
+    { title: "Favorite bloom", body: "There's a calm, bright way you move through a room that makes everything nearby feel a little better." },
+    { title: "Nerd's note", body: "This garden runs on HTML, CSS, JavaScript, and one very serious bloom algorithm quietly named after you." },
+    { title: "Small truth", body: "You're not admired only for how you look — it's the way you make people feel that people actually remember." },
+    { title: "Soft promise", body: "I want to keep finding small, unexpected ways to make you smile, because your happiness is not a small thing to me." }
   ],
-
-  secretMsg: "You found the garden, Hayatyy. Of course you did. This is the part no one else gets to read. This was built with a specific kind of care — the kind that does not know how else to say: I am grateful for you. Genuinely, specifically, deeply grateful. From your Nerdy Nerd. Always.",
-
-  finalMsg: "I built this because the first one was not enough to hold what I wanted to say. And this one probably is not enough either. But here it is: you are not ordinary to me. You never were. You are the kind of person who makes a person want to try harder, be softer, notice more. You make things better by being in them. And I am glad — quietly, completely, every day — that you are in mine. That is the whole message. That is all of it. — Your Nerdy Nerd ✦"
+  secretMessage: "You found the greenhouse, Hayatyy. Of course you did — you always find your way to the parts that matter. This little room only opens for you, because you're not just visiting this garden, you're the whole reason I planted it. From your Nerdy Nerd, with every quiet, careful thing I grew in here.",
+  finalMessage: "I built this garden because a text message felt too small for everything I wanted to say. I wanted you to wander through something and feel cared for, thought about, and genuinely cherished — not because I said so once, but because I kept choosing to show it, one small planted thing at a time. You are not just someone I enjoy talking to; you're someone whose presence makes ordinary things feel worth noticing. I hope every poem, every postcard, every firefly, and every quiet little corner in here reminds you that you are deeply valued and completely, uniquely yours-to-me. — Your Nerdy Nerd"
 };
 
-// ─── DOM REFERENCES ───────────────────────────────────────────
-const herNameDisplay = document.getElementById("herNameDisplay");
-const typewriterEl   = document.getElementById("typewriter");
-const startBtn       = document.getElementById("startBtn");
-const musicBtn       = document.getElementById("musicBtn");
-const homeSection    = document.getElementById("home");
-const dashboard      = document.getElementById("dashboard");
-const dashTitle      = document.getElementById("dashTitle");
+const herNameTitle = document.getElementById("herNameTitle");
+const typewriter = document.getElementById("typewriter");
+const startBtn = document.getElementById("startBtn");
+const musicBtn = document.getElementById("musicBtn");
+const home = document.getElementById("home");
+const dashboard = document.getElementById("dashboard");
+const dashboardTitle = document.getElementById("dashboardTitle");
+const poemBox = document.getElementById("poemBox");
+const reasonBox = document.getElementById("reasonBox");
+const newPoemBtn = document.getElementById("newPoemBtn");
+const narrateBtn = document.getElementById("narrateBtn");
+const reasonBtn = document.getElementById("reasonBtn");
+const letterButtons = document.getElementById("letterButtons");
+const letterBox = document.getElementById("letterBox");
+const moodButtons = document.getElementById("moodButtons");
+const moodBox = document.getElementById("moodBox");
+const quizCount = document.getElementById("quizCount");
+const quizQuestion = document.getElementById("quizQuestion");
+const quizOptions = document.getElementById("quizOptions");
+const quizFeedback = document.getElementById("quizFeedback");
+const nextQuizBtn = document.getElementById("nextQuizBtn");
+const couponDisplay = document.getElementById("couponDisplay");
+const couponBtn = document.getElementById("couponBtn");
+const redeemCouponBtn = document.getElementById("redeemCouponBtn");
+const secretInput = document.getElementById("secretInput");
+const unlockSecretBtn = document.getElementById("unlockSecretBtn");
+const secretMessage = document.getElementById("secretMessage");
+const starGame = document.getElementById("starGame");
+const resetGameBtn = document.getElementById("resetGameBtn");
+const meterFill = document.getElementById("meterFill");
+const meterText = document.getElementById("meterText");
+const timeline = document.getElementById("timeline");
+const finalCard = document.getElementById("finalCard");
+const finalTitle = document.getElementById("finalTitle");
+const finalMessage = document.getElementById("finalMessage");
+const replayBtn = document.getElementById("replayBtn");
+const fireflyLayer = document.getElementById("fireflyLayer");
 
-const poemBox        = document.getElementById("poemBox");
-const bloomBtn       = document.getElementById("bloomBtn");
-const narrateBtn     = document.getElementById("narrateBtn");
-
-const wishInput      = document.getElementById("wishInput");
-const sendWishBtn    = document.getElementById("sendWishBtn");
-const wishResponse   = document.getElementById("wishResponse");
-
-const letterChips    = document.getElementById("letterChips");
-const letterBox      = document.getElementById("letterBox");
-
-const moodChips      = document.getElementById("moodChips");
-const moodBox        = document.getElementById("moodBox");
-
-const arabicAr       = document.getElementById("arabicAr");
-const arabicEn       = document.getElementById("arabicEn");
-const arabicNote     = document.getElementById("arabicNote");
-const arabicNextBtn  = document.getElementById("arabicNextBtn");
-const arabicCounter  = document.getElementById("arabicCounter");
-
-const quizLabel      = document.getElementById("quizLabel");
-const quizQ          = document.getElementById("quizQ");
-const quizOpts       = document.getElementById("quizOpts");
-const quizFb         = document.getElementById("quizFb");
-const nextQuizBtn    = document.getElementById("nextQuizBtn");
-
-const reasonBox      = document.getElementById("reasonBox");
-const reasonBtn      = document.getElementById("reasonBtn");
-
-const gameCanvas     = document.getElementById("gameCanvas");
-const resetStarsBtn  = document.getElementById("resetStarsBtn");
-const starsCaughtText = document.getElementById("starsCaughtText");
-
-const couponDisplay  = document.getElementById("couponDisplay");
-const couponBtn      = document.getElementById("couponBtn");
-const saveCouponBtn  = document.getElementById("saveCouponBtn");
-
-const secretInput    = document.getElementById("secretInput");
-const unlockBtn      = document.getElementById("unlockBtn");
-const secretMsg      = document.getElementById("secretMsg");
-
-const lanternGrid    = document.getElementById("lanternGrid");
-
-const smileFill      = document.getElementById("smileFill");
-const smileText      = document.getElementById("smileText");
-
-const finalCard      = document.getElementById("finalCard");
-const finalTitle     = document.getElementById("finalTitle");
-const finalMsg       = document.getElementById("finalMsg");
-const replayBtn      = document.getElementById("replayBtn");
-
-const floatingLayer  = document.getElementById("floatingLayer");
-
-// ─── STATE ────────────────────────────────────────────────────
+let poemIndex = -1;
+let quizIndex = 0;
+let currentCouponIndex = -1;
 let score = 0;
-let poemIdx = -1;
-let arabicIdx = -1;
-let quizIdx = 0;
+let caughtFireflies = 0;
 let quizAnswered = false;
-let couponIdx = -1;
 let secretUnlocked = false;
-let starsConnected = 0;
-const TOTAL_STARS = 12;
-const STAR_SCORE_EACH = 4;
-const BONUS_ALL_STARS = 10;
-let stars = [];
-let lines = [];
-let lastStar = null;
-let chimeInterval = null;
+const totalFireflies = 12;
 
-// ─── BACKGROUND CONSTELLATION CANVAS ─────────────────────────
-const bgCanvas = document.getElementById("constellationCanvas");
-const bgCtx = bgCanvas.getContext("2d");
-let bgStars = [];
+herNameTitle.textContent = CONFIG.herName;
+dashboardTitle.textContent = `${CONFIG.herName}'s little garden`;
 
-function initBgCanvas() {
-  bgCanvas.width = window.innerWidth;
-  bgCanvas.height = window.innerHeight;
-  bgStars = [];
-  for (let i = 0; i < 140; i++) {
-    bgStars.push({
-      x: Math.random() * bgCanvas.width,
-      y: Math.random() * bgCanvas.height,
-      r: Math.random() * 1.3 + 0.2,
-      alpha: Math.random() * 0.6 + 0.15,
-      speed: Math.random() * 0.004 + 0.001,
-      phase: Math.random() * Math.PI * 2
-    });
-  }
-}
-
-function drawBgCanvas(t) {
-  bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
-  bgStars.forEach(s => {
-    const a = s.alpha * (0.6 + 0.4 * Math.sin(t * s.speed + s.phase));
-    bgCtx.beginPath();
-    bgCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-    bgCtx.fillStyle = `rgba(255, 215, 120, ${a})`;
-    bgCtx.fill();
-  });
-  requestAnimationFrame(drawBgCanvas);
-}
-
-initBgCanvas();
-window.addEventListener("resize", initBgCanvas);
-requestAnimationFrame(drawBgCanvas);
-
-// ─── FLOATIES ─────────────────────────────────────────────────
-const FLOATIES = ["✦", "♡", "✧", "˚", "❀", "⋆", "·˚"];
-
-function sparkle(count = 14) {
-  for (let i = 0; i < count; i++) {
-    const el = document.createElement("span");
-    el.className = "floaty";
-    el.textContent = FLOATIES[Math.floor(Math.random() * FLOATIES.length)];
-    el.style.left = `${10 + Math.random() * 80}%`;
-    el.style.fontSize = `${0.7 + Math.random() * 1}rem`;
-    el.style.animationDuration = `${5 + Math.random() * 7}s`;
-    el.style.animationDelay = `${Math.random() * 1.5}s`;
-    el.style.color = `rgba(255, ${180 + Math.floor(Math.random() * 76)}, ${80 + Math.floor(Math.random() * 80)}, 0.85)`;
-    floatingLayer.appendChild(el);
-    setTimeout(() => el.remove(), 13000);
-  }
-}
-
-setInterval(() => sparkle(2), 2200);
-sparkle(10);
-
-// ─── TYPEWRITER ───────────────────────────────────────────────
-function typeText(lines, el) {
-  const full = lines.join(" ");
-  let i = 0;
-  el.textContent = "";
-  const t = setInterval(() => {
-    el.textContent += full[i++];
-    if (i >= full.length) clearInterval(t);
+function typeText(lines, element) {
+  const text = lines.join(" ");
+  let index = 0;
+  element.textContent = "";
+  const timer = setInterval(() => {
+    element.textContent += text.charAt(index);
+    index += 1;
+    if (index >= text.length) clearInterval(timer);
   }, 30);
 }
 
-typeText(CONFIG.intro, typewriterEl);
+typeText(CONFIG.introLines, typewriter);
 
-// ─── CHIME ────────────────────────────────────────────────────
-let chimeOn = false;
-function playChime() {
-  const AC = window.AudioContext || window.webkitAudioContext;
-  if (!AC) return;
-  const ctx = new AC();
-  // Pentatonic scale — always harmonious
-  const freqs = [392, 523.25, 659.25, 783.99, 1046.5];
-  const picked = [freqs[0], freqs[2], freqs[3], freqs[4]];
-  picked.forEach((f, i) => {
-    const osc  = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type = "sine";
-    osc.frequency.value = f;
-    const t = ctx.currentTime + i * 0.18;
-    gain.gain.setValueAtTime(0.0001, t);
-    gain.gain.exponentialRampToValueAtTime(0.1, t + 0.04);
-    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.7);
-    osc.connect(gain).connect(ctx.destination);
-    osc.start(t);
-    osc.stop(t + 0.75);
-  });
+function sparkle(amount = 18) {
+  for (let i = 0; i < amount; i++) {
+    const item = document.createElement("span");
+    item.className = "firefly-particle";
+    item.textContent = ["✿", "❀", "˚", "☘", "🌿", "・゚"][Math.floor(Math.random() * 6)];
+    item.style.left = `${Math.random() * 100}%`;
+    item.style.animationDuration = `${6 + Math.random() * 7}s`;
+    item.style.animationDelay = `${Math.random() * 2}s`;
+    fireflyLayer.appendChild(item);
+    setTimeout(() => item.remove(), 14000);
+  }
 }
 
-musicBtn.addEventListener("click", () => {
-  chimeOn = !chimeOn;
-  musicBtn.textContent = chimeOn ? "♪ Chime: on" : "♪ Chime: off";
-  if (chimeOn) {
-    playChime();
-    chimeInterval = setInterval(playChime, 9000);
-  } else {
-    clearInterval(chimeInterval);
-  }
-});
+setInterval(() => sparkle(3), 1900);
+sparkle(12);
 
-// ─── START ────────────────────────────────────────────────────
 startBtn.addEventListener("click", () => {
-  homeSection.classList.add("hidden");
+  home.classList.add("hidden");
   dashboard.classList.remove("hidden");
   sparkle(30);
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// ─── SCORE ────────────────────────────────────────────────────
-function addScore(pts) {
-  score = Math.min(100, score + pts);
-  smileFill.style.width = `${score}%`;
-  smileText.textContent = `${score} / 100`;
-  if (score >= 100) unlockFinal();
+musicBtn.addEventListener("click", () => {
+  const isOn = musicBtn.getAttribute("aria-pressed") === "true";
+  musicBtn.setAttribute("aria-pressed", String(!isOn));
+  musicBtn.textContent = !isOn ? "Garden hum: on" : "Garden hum: off";
+  if (!isOn) playChime();
+});
+
+function playChime() {
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContext) return;
+  const ctx = new AudioContext();
+  const notes = [493.88, 587.33, 698.46, 880.0];
+  notes.forEach((freq, i) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.frequency.value = freq;
+    osc.type = "sine";
+    gain.gain.setValueAtTime(0.0001, ctx.currentTime + i * 0.15);
+    gain.gain.exponentialRampToValueAtTime(0.12, ctx.currentTime + i * 0.15 + 0.03);
+    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + i * 0.15 + 0.5);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(ctx.currentTime + i * 0.15);
+    osc.stop(ctx.currentTime + i * 0.15 + 0.55);
+  });
 }
 
-// ─── POEM GARDEN ─────────────────────────────────────────────
-bloomBtn.addEventListener("click", () => {
-  poemIdx = (poemIdx + 1) % CONFIG.poems.length;
-  poemBox.textContent = CONFIG.poems[poemIdx];
-  addScore(6);
+newPoemBtn.addEventListener("click", () => {
+  poemIndex = (poemIndex + 1) % CONFIG.poems.length;
+  poemBox.textContent = CONFIG.poems[poemIndex];
+  addScore(7);
   sparkle(10);
 });
 
 narrateBtn.addEventListener("click", () => {
-  const txt = poemBox.textContent.trim();
-  if (!txt || txt.startsWith("Press")) return;
+  const text = poemBox.textContent.trim();
+  if (!text || text.includes("Pull a petal")) return;
   window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(txt);
-  u.rate = 0.85; u.pitch = 1.05;
-  window.speechSynthesis.speak(u);
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.rate = 0.88;
+  utterance.pitch = 1.0;
+  window.speechSynthesis.speak(utterance);
 });
 
-// ─── ARABIC VERSES ────────────────────────────────────────────
-function renderArabicVerse() {
-  const v = CONFIG.arabicVerses[arabicIdx];
-  arabicAr.textContent = v.ar;
-  arabicEn.textContent = v.en;
-  arabicNote.textContent = v.note;
-  arabicCounter.textContent = `${arabicIdx + 1} / ${CONFIG.arabicVerses.length}`;
-}
-
-arabicNextBtn.addEventListener("click", () => {
-  arabicIdx = (arabicIdx + 1) % CONFIG.arabicVerses.length;
-  renderArabicVerse();
+reasonBtn.addEventListener("click", () => {
+  const reason = CONFIG.reasons[Math.floor(Math.random() * CONFIG.reasons.length)];
+  reasonBox.textContent = reason;
   addScore(7);
-  sparkle(12);
+  sparkle(8);
 });
 
-arabicCounter.textContent = `0 / ${CONFIG.arabicVerses.length}`;
-
-// ─── WISHING WELL ─────────────────────────────────────────────
-sendWishBtn.addEventListener("click", () => {
-  const txt = wishInput.value.trim();
-  if (!txt) {
-    wishInput.focus();
-    return;
-  }
-  const reply = CONFIG.wishes[Math.floor(Math.random() * CONFIG.wishes.length)];
-  wishResponse.textContent = reply;
-  wishResponse.classList.remove("hidden");
-  addScore(8);
-  sparkle(14);
-});
-
-// ─── LETTERS ─────────────────────────────────────────────────
-function buildLetters() {
-  letterChips.innerHTML = "";
-  CONFIG.letters.forEach((letter) => {
+function renderLetters() {
+  letterButtons.innerHTML = "";
+  CONFIG.openWhenLetters.forEach((letter) => {
     const btn = document.createElement("button");
-    btn.className = "chip";
-    btn.textContent = letter.label;
+    btn.className = "chip-btn";
+    btn.type = "button";
+    btn.textContent = letter.title;
     btn.addEventListener("click", () => {
-      document.querySelectorAll("#letterChips .chip").forEach(c => c.classList.remove("active"));
-      btn.classList.add("active");
-      letterBox.innerHTML = `<strong style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.05rem;">${letter.label}</strong><br><br>${letter.text}`;
-      letterBox.classList.remove("hidden");
-      addScore(7);
+      letterBox.innerHTML = `<strong>${letter.title}</strong><br><br>${letter.message}`;
+      addScore(8);
       sparkle(12);
     });
-    letterChips.appendChild(btn);
+    letterButtons.appendChild(btn);
   });
 }
 
-// ─── MOOD ORACLE ──────────────────────────────────────────────
-function buildMoods() {
-  moodChips.innerHTML = "";
+function renderMoods() {
+  moodButtons.innerHTML = "";
   CONFIG.moods.forEach((mood) => {
     const btn = document.createElement("button");
-    btn.className = "chip";
+    btn.className = "chip-btn";
+    btn.type = "button";
     btn.textContent = mood.label;
     btn.addEventListener("click", () => {
-      document.querySelectorAll("#moodChips .chip").forEach(c => c.classList.remove("active"));
-      btn.classList.add("active");
-      moodBox.textContent = mood.msg;
-      addScore(6);
-      sparkle(9);
+      moodBox.textContent = mood.message;
+      addScore(7);
+      sparkle(10);
     });
-    moodChips.appendChild(btn);
+    moodButtons.appendChild(btn);
   });
 }
 
-// ─── QUIZ ─────────────────────────────────────────────────────
 function renderQuiz() {
-  const item = CONFIG.quiz[quizIdx];
+  const item = CONFIG.quiz[quizIndex];
   quizAnswered = false;
-  quizLabel.textContent = `Riddle ${quizIdx + 1} of ${CONFIG.quiz.length}`;
-  quizQ.textContent = item.q;
-  quizFb.textContent = "Pick an answer to begin.";
-  quizOpts.innerHTML = "";
-  item.opts.forEach((opt, i) => {
+  quizCount.textContent = `Question ${quizIndex + 1} of ${CONFIG.quiz.length}`;
+  quizQuestion.textContent = item.question;
+  quizFeedback.textContent = "Choose an answer to begin.";
+  quizOptions.innerHTML = "";
+
+  item.options.forEach((option, index) => {
     const btn = document.createElement("button");
-    btn.textContent = opt;
-    btn.addEventListener("click", () => {
-      if (quizAnswered) return;
-      quizAnswered = true;
-      [...quizOpts.querySelectorAll("button")].forEach((b, j) => {
-        b.disabled = true;
-        if (j === item.ans) b.classList.add("correct");
-      });
-      if (i === item.ans) {
-        btn.classList.add("correct");
-        quizFb.textContent = item.fb;
-        addScore(10);
-        sparkle(14);
-      } else {
-        btn.classList.add("wrong");
-        quizFb.textContent = "Not quite — but the right answer has been revealed. Look for the gold.";
-        addScore(4);
-      }
-    });
-    quizOpts.appendChild(btn);
+    btn.type = "button";
+    btn.textContent = option;
+    btn.addEventListener("click", () => handleQuizAnswer(btn, index));
+    quizOptions.appendChild(btn);
   });
+}
+
+function handleQuizAnswer(button, selectedIndex) {
+  if (quizAnswered) return;
+  quizAnswered = true;
+  const item = CONFIG.quiz[quizIndex];
+  const optionButtons = [...quizOptions.querySelectorAll("button")];
+
+  optionButtons.forEach((btn, index) => {
+    btn.disabled = true;
+    if (index === item.answer) btn.classList.add("correct");
+  });
+
+  if (selectedIndex === item.answer) {
+    button.classList.add("correct");
+    quizFeedback.textContent = item.response;
+    addScore(10);
+    sparkle(14);
+  } else {
+    button.classList.add("wrong");
+    quizFeedback.textContent = "Close, but the garden's heart says the golden answer is the right one.";
+    addScore(4);
+  }
 }
 
 nextQuizBtn.addEventListener("click", () => {
-  quizIdx = (quizIdx + 1) % CONFIG.quiz.length;
+  quizIndex = (quizIndex + 1) % CONFIG.quiz.length;
   renderQuiz();
 });
 
-// ─── REASONS ─────────────────────────────────────────────────
-reasonBtn.addEventListener("click", () => {
-  const r = CONFIG.reasons[Math.floor(Math.random() * CONFIG.reasons.length)];
-  reasonBox.textContent = r;
-  addScore(6);
-  sparkle(8);
-});
-
-// ─── CONSTELLATION GAME ───────────────────────────────────────
-function initStarGame() {
-  const ctx = gameCanvas.getContext("2d");
-  const W = gameCanvas.offsetWidth;
-  const H = gameCanvas.offsetHeight;
-  gameCanvas.width  = W;
-  gameCanvas.height = H;
-  stars = [];
-  lines = [];
-  lastStar = null;
-  starsConnected = 0;
-  starsCaughtText.textContent = `0 / ${TOTAL_STARS} stars connected`;
-
-  // Lay out stars in a somewhat pleasing shape
-  const positions = [];
-  while (positions.length < TOTAL_STARS) {
-    const x = 0.08 * W + Math.random() * 0.84 * W;
-    const y = 0.1  * H + Math.random() * 0.8  * H;
-    const tooClose = positions.some(p => Math.hypot(p.x - x, p.y - y) < 48);
-    if (!tooClose) positions.push({ x, y });
-  }
-
-  positions.forEach((p, i) => {
-    stars.push({ x: p.x, y: p.y, r: 10, caught: false, order: i, pulse: Math.random() * Math.PI * 2 });
-  });
-
-  drawGame(0);
-}
-
-function drawGame(t) {
-  const ctx = gameCanvas.getContext("2d");
-  const W = gameCanvas.width, H = gameCanvas.height;
-  ctx.clearRect(0, 0, W, H);
-
-  // Draw lines
-  ctx.save();
-  ctx.strokeStyle = "rgba(255, 215, 120, 0.35)";
-  ctx.lineWidth = 1.5;
-  lines.forEach(([a, b]) => {
-    ctx.beginPath();
-    ctx.moveTo(a.x, a.y);
-    ctx.lineTo(b.x, b.y);
-    ctx.stroke();
-  });
-  ctx.restore();
-
-  // Draw stars
-  stars.forEach(s => {
-    const pulse = 0.7 + 0.3 * Math.sin(t * 0.002 + s.pulse);
-    const alpha = s.caught ? 1 : 0.55 + 0.3 * pulse;
-
-    // Glow
-    const grd = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.caught ? 20 : 16);
-    grd.addColorStop(0, s.caught ? "rgba(255,215,120,0.6)" : "rgba(255,215,120,0.3)");
-    grd.addColorStop(1, "rgba(255,215,120,0)");
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, s.caught ? 20 : 16, 0, Math.PI * 2);
-    ctx.fillStyle = grd;
-    ctx.fill();
-
-    // Star
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, s.caught ? 7 : 6 * pulse, 0, Math.PI * 2);
-    ctx.fillStyle = s.caught ? "rgba(255,215,120,1)" : `rgba(255,215,120,${alpha})`;
-    ctx.fill();
-
-    // Label
-    if (!s.caught) {
-      ctx.fillStyle = "rgba(255,215,120,0.45)";
-      ctx.font = "10px DM Sans";
-      ctx.textAlign = "center";
-      ctx.fillText("✦", s.x, s.y + s.r + 18);
-    }
-  });
-
-  if (!stars.every(s => s.caught)) {
-    requestAnimationFrame(ts => drawGame(ts));
-  }
-}
-
-gameCanvas.addEventListener("click", (e) => {
-  const rect = gameCanvas.getBoundingClientRect();
-  const mx = (e.clientX - rect.left) * (gameCanvas.width / rect.width);
-  const my = (e.clientY - rect.top) * (gameCanvas.height / rect.height);
-
-  const hit = stars.find(s => !s.caught && Math.hypot(s.x - mx, s.y - my) < 22);
-  if (!hit) return;
-
-  hit.caught = true;
-  starsConnected++;
-  starsCaughtText.textContent = `${starsConnected} / ${TOTAL_STARS} stars connected`;
-
-  if (lastStar) {
-    lines.push([lastStar, hit]);
-  }
-  lastStar = hit;
-
-  addScore(STAR_SCORE_EACH);
-  sparkle(6);
-  if (starsConnected === TOTAL_STARS) {
-    addScore(BONUS_ALL_STARS);
-    sparkle(24);
-    starsCaughtText.textContent = `All ${TOTAL_STARS} stars connected ✦ Constellation complete!`;
-  }
-});
-
-resetStarsBtn.addEventListener("click", initStarGame);
-
-// ─── COUPONS ─────────────────────────────────────────────────
 couponBtn.addEventListener("click", () => {
-  couponIdx = (couponIdx + 1) % CONFIG.coupons.length;
-  couponDisplay.textContent = CONFIG.coupons[couponIdx];
-  addScore(6);
+  currentCouponIndex = (currentCouponIndex + 1) % CONFIG.coupons.length;
+  couponDisplay.textContent = CONFIG.coupons[currentCouponIndex];
+  addScore(7);
+  sparkle(10);
+});
+
+redeemCouponBtn.addEventListener("click", () => {
+  if (currentCouponIndex === -1) {
+    couponDisplay.textContent = "Open a seed packet first, then tuck it away for later.";
+    return;
+  }
+  couponDisplay.textContent = `${CONFIG.coupons[currentCouponIndex]} Tucked away safely by the bloom algorithm.`;
+  addScore(5);
   sparkle(9);
 });
 
-saveCouponBtn.addEventListener("click", () => {
-  if (couponIdx === -1) { couponDisplay.textContent = "Reveal a coupon first, then save it."; return; }
-  couponDisplay.textContent = CONFIG.coupons[couponIdx] + "\n— Saved to your heart pocket ✦";
-  addScore(4);
-  sparkle(8);
+unlockSecretBtn.addEventListener("click", unlockSecretRoom);
+secretInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") unlockSecretRoom();
 });
 
-// ─── SECRET GARDEN ────────────────────────────────────────────
-function tryUnlock() {
-  const val = secretInput.value.trim().toLowerCase();
-  if (CONFIG.secretKeys.includes(val)) {
-    secretMsg.textContent = CONFIG.secretMsg;
-    secretMsg.classList.remove("hidden");
+function unlockSecretRoom() {
+  const value = secretInput.value.trim().toLowerCase();
+  if (CONFIG.secretWords.includes(value)) {
+    secretMessage.textContent = CONFIG.secretMessage;
     if (!secretUnlocked) addScore(15);
     secretUnlocked = true;
-    sparkle(28);
+    sparkle(25);
   } else {
-    secretMsg.textContent = "Not quite, Hayatyy. The key is the name you gave me. You know it.";
-    secretMsg.classList.remove("hidden");
-    sparkle(3);
+    secretMessage.textContent = "Not yet, Hayatyy. Hint: it's the cute name you call me.";
+    sparkle(4);
   }
 }
 
-unlockBtn.addEventListener("click", tryUnlock);
-secretInput.addEventListener("keydown", e => { if (e.key === "Enter") tryUnlock(); });
-
-// ─── LANTERN WALL ─────────────────────────────────────────────
-function buildLanterns() {
-  lanternGrid.innerHTML = "";
-  CONFIG.lanterns.forEach(l => {
-    const el = document.createElement("div");
-    el.className = "lantern";
-    el.innerHTML = `<span class="lantern-title">${l.title}</span><p>${l.body}</p>`;
-    lanternGrid.appendChild(el);
+function renderTimeline() {
+  timeline.innerHTML = "";
+  CONFIG.memories.forEach((memory) => {
+    const card = document.createElement("div");
+    card.className = "memory";
+    card.innerHTML = `<strong>${memory.title}</strong><p>${memory.body}</p>`;
+    timeline.appendChild(card);
   });
 }
 
-// ─── FINAL UNLOCK ─────────────────────────────────────────────
+function renderStars() {
+  starGame.innerHTML = "";
+  caughtFireflies = 0;
+  for (let i = 0; i < totalFireflies; i++) {
+    const firefly = document.createElement("button");
+    firefly.className = "star-button";
+    firefly.type = "button";
+    firefly.textContent = "🌟";
+    firefly.style.left = `${8 + Math.random() * 78}%`;
+    firefly.style.top = `${8 + Math.random() * 72}%`;
+    firefly.style.animationDelay = `${Math.random() * 1.5}s`;
+    firefly.setAttribute("aria-label", "Catch firefly");
+    firefly.addEventListener("click", () => {
+      firefly.classList.add("caught");
+      firefly.textContent = "✨";
+      caughtFireflies += 1;
+      addScore(5);
+      sparkle(7);
+      if (caughtFireflies === totalFireflies) addScore(10);
+    }, { once: true });
+    starGame.appendChild(firefly);
+  }
+}
+
+resetGameBtn.addEventListener("click", () => {
+  renderStars();
+});
+
+function addScore(points) {
+  score = Math.min(100, score + points);
+  meterFill.style.width = `${score}%`;
+  meterText.textContent = `${score}%`;
+  if (score >= 100) unlockFinal();
+}
+
 function unlockFinal() {
   finalCard.classList.remove("locked");
   finalCard.classList.add("unlocked");
-  finalTitle.textContent = "Here it is, Hayatyy 💛";
-  finalMsg.textContent = CONFIG.finalMsg;
+  finalTitle.textContent = "Unlocked: one honest note from the garden 💛";
+  finalMessage.textContent = CONFIG.finalMessage;
   replayBtn.classList.remove("hidden");
-  sparkle(40);
+  sparkle(36);
 }
 
 replayBtn.addEventListener("click", () => {
   score = 0;
-  poemIdx = -1;
-  arabicIdx = -1;
-  quizIdx = 0;
-  couponIdx = -1;
+  poemIndex = -1;
+  quizIndex = 0;
+  currentCouponIndex = -1;
   secretUnlocked = false;
-  poemBox.textContent = "Press Bloom \u2756 to open the first flower.";
-  arabicAr.textContent = "";
-  arabicEn.textContent = "Press \"Unfold a verse\" to begin.";
-  arabicNote.textContent = "";
-  arabicCounter.textContent = `0 / ${CONFIG.arabicVerses.length}`;
-  reasonBox.textContent = "Ready when you press below.";
-  letterBox.classList.add("hidden");
-  wishResponse.classList.add("hidden");
-  wishInput.value = "";
+  poemBox.textContent = "Pull a petal to open the first one.";
+  reasonBox.textContent = "Ready when you are.";
+  letterBox.textContent = "Choose a postcard from the line above.";
+  moodBox.textContent = "Waiting to hear how you're doing, Hayatyy.";
+  couponDisplay.textContent = "Tap below to open a seed packet.";
   secretInput.value = "";
-  secretMsg.classList.add("hidden");
-  moodBox.textContent = "The oracle is listening, Hayatyy.";
-  couponDisplay.textContent = "Press reveal to unwrap a coupon.";
-  smileFill.style.width = "0%";
-  smileText.textContent = "0 / 100";
+  secretMessage.textContent = "The greenhouse door is still closed.";
+  meterFill.style.width = "0%";
+  meterText.textContent = "0%";
   finalCard.classList.add("locked");
   finalCard.classList.remove("unlocked");
-  finalTitle.textContent = "Sealed with love 🔐";
-  finalMsg.textContent = "Fill the love meter to 100 to unseal the final message.";
+  finalTitle.textContent = "Still growing 🔐";
+  finalMessage.textContent = "Reach full bloom (100%) to unlock the final note.";
   replayBtn.classList.add("hidden");
-  document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
   renderQuiz();
-  initStarGame();
-  sparkle(16);
+  renderStars();
+  sparkle(14);
 });
 
-// ─── INIT ─────────────────────────────────────────────────────
-herNameDisplay.textContent = CONFIG.displayName;
-dashTitle.textContent = `${CONFIG.herName}'s Little Cosmos`;
-arabicEn.textContent = "Press \"Unfold a verse\" to begin.";
-buildLetters();
-buildMoods();
+renderLetters();
+renderMoods();
 renderQuiz();
-buildLanterns();
-
-// Delay star game init until visible
-const dashboardObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { initStarGame(); dashboardObs.disconnect(); } });
-});
-dashboardObs.observe(dashboard);
+renderTimeline();
+renderStars();
